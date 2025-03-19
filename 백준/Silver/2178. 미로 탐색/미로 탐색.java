@@ -28,7 +28,7 @@ public class Main {
         System.out.println(A[N - 1][M - 1]);
     }
 
-    public static void BFS(int i, int j) { // DFS - 재귀 함수 형태
+    public static void BFS(int i, int j) { // DFS - 큐 사용
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{i, j});
         visited[i][j] = true;
