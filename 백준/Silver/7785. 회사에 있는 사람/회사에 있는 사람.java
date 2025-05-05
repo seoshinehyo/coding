@@ -6,22 +6,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
-        Set<String> set = new HashSet<>();
-        
+        Set<String> set = new TreeSet<>(Collections.reverseOrder());
+
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             String name = st.nextToken();
             String event = st.nextToken();
-            if (event.equals("enter")) {
+
+            if ("enter".equals(event)) {
                 set.add(name);
             } else {
                 set.remove(name);
             }
         }
 
-        List<String> list = new ArrayList<>(set);
-        Collections.sort(list, Collections.reverseOrder());
-        for (String name : list) {
+        for (String name : set) {
             System.out.println(name);
         }
 
